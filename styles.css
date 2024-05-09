@@ -1,0 +1,19 @@
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #f0f8ff; 
+}
+
+/* Estilos para el título "Italia" */
+    h1 {
+        text-align: left; 
+        margin-left: 150px; 
+    }
+
+/* Estilos para las regiones */
+.region {
+    fill: transparent; 
+}
+
+.region:hover {
+    fill: rgba(67, 53, 5, 0.5); 
+}
