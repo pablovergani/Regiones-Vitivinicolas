@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const regionElements = document.querySelectorAll('.region');
     const regionNames = document.querySelectorAll('.region-name');
-    const closeModal = document.querySelector('.close');
+    const closeModals = document.querySelectorAll('.close');
     
     // Cierra todos los modales
     function closeAllModals() {
@@ -96,8 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cerrar todos los modales al hacer clic en el botón de cerrar
-    closeModal.addEventListener('click', () => {
-        closeAllModals();
+    closeModals.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        });
     });
 
     // Cerrar todos los modales al hacer clic fuera del contenido
