@@ -1,3 +1,22 @@
+/* Estilo para index */
+#italy-button {
+    position: absolute;
+    padding: 10px;
+    background-color: #dbd2c4;
+    color: rgb(17, 16, 16);
+    font-size: 50px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}  
+
+#italy-button:hover {
+    background-color: #ffc400;
+    transform: scale(1.05);
+}
+
 /* Fondo de la página */
 body {
     background-color: #f0f0f0; /* Color de fondo suave */
