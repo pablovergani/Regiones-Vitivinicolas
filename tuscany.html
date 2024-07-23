@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toscana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Toscana</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región emblemática con vinos complejos y de gran calidad.</p>
+        <p>Estilos famosos: <strong>Chianti</strong>🍷, <strong>Brunello di Montalcino</strong>🍷.</p>
+        <p>Vinos icónicos con gran potencial de envejecimiento.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Vernaccia.</p>
+        <p>🟣 <strong>Tintas</strong>: Sangiovese, Cabernet Sauvignon.</p>
+
+        <h2>Clima</h2>
+        <p><strong>Continental</strong> con influencia <strong>marítima</strong> en la costa.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOCG Chianti</strong>: tinto con notas de frutas rojas y especias.</li>
+            <li><strong>DOCG Brunello di Montalcino</strong>: tinto robusto y complejo.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

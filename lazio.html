@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Lazio</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región conocida por sus vinos frescos y su rica tradición vitivinícola.</p>
+        <p>Estilos famosos: <strong>Frascati</strong>🥂, <strong>Est! Est!! Est!!!</strong>🍷.</p>
+        <p>Vinos que representan la diversidad de la región.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Malvasia, Trebbiano.</p>
+        <p>🟣 <strong>Tintas</strong>: Sangiovese, Cesanese.</p>
+
+        <h2>Clima</h2>
+        <p><strong>Mediterráneo</strong> con inviernos suaves y veranos cálidos.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOC Frascati</strong>: blanco fresco y afrutado.</li>
+            <li><strong>DOCG Cesanese del Piglio</strong>: tinto con estructura y notas especiadas.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

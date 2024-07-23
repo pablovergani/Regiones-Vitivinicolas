@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const regionElements = document.querySelectorAll('.region');
     const regionNames = document.querySelectorAll('.region-name');
-    const closeModals = document.querySelectorAll('.close');
-    
+    const closeButtons = document.querySelectorAll('.close');
+
     // Cierra todos los modales
     function closeAllModals() {
         document.querySelectorAll('.modal').forEach(modal => {
@@ -10,57 +10,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Abre el modal de la región específica
+    // Abre el modal de una región específica y carga el contenido
     function openRegionModal(regionId) {
         const modal = document.getElementById(`modal-${regionId}`);
         if (modal) {
-            modal.style.display = 'flex';
+            fetch(`modal-${regionId}.html`)
+                .then(response => response.text())
+                .then(data => {
+                    const modalContent = modal.querySelector('.modal-content');
+                    modalContent.innerHTML = data;
+                    modalContent.innerHTML += '<span class="close">&times;</span>'; // Agrega el botón de cerrar
+                    modal.style.display = 'flex';
+                    setupCloseEvent(); // Configura el evento de cierre
+                })
+                .catch(error => console.error('Error al cargar el contenido del modal:', error));
         }
     }
 
-    // Mostrar el modal de "Intro e Información General"
+// Agregar el evento de clic en el botón "Ver más" de los modales
+document.addEventListener('click', function(event) {
+    if (event.target && event.target.tagName === 'A' && event.target.getAttribute('href')) {
+        event.preventDefault();
+        const href = event.target.getAttribute('href');
+        window.location.href = href;
+    }
+});
+
+    // Abre el modal de "Intro e Información General"
     document.getElementById('intro').addEventListener('click', function() {
         const modal = document.getElementById('modal-intro-info');
-        const modalContent = document.getElementById('modal-intro-info-content');
-        modalContent.innerHTML = `
-            <h2>Intro e Información General</h2>
-            <p>Variedad más amplia del mundo de estilos de vinos, terruños y variedades de uvas autóctonas.</p>
-            <p>Cuarto país con mayor superficie plantada, primer productor a nivel mundial.</p>
-            <p>Clima difícil de generalizar, hacia el norte más continental y hacia el sur más mediterráneo. Apeninos como factor común en casi todo el territorio. Viticultura de calidad en las laderas.</p>
-            <p>Vinos más admirados provienen de suelos calcáreos (Piemonte, Toscana). También hay predominancia de suelos volcánicos (Soave).</p>
-            <h3>DOC vs DOCG</h3>
-            <p>DOCG regulación más estricta. Más restrictiva en términos de variedades (suelen ser varietales o blends específicos). Tiene que haber sido DOC por 5 años.</p>
-            <p>DOCG: bandita rosa. 🎀</p>
-            <p>DOC: bandita verde. 🟢</p>
-            <h3>Glosario</h3>
-            <ul>
-                <li><strong>Appasimento</strong>: proceso en el cual se secan las uvas sobre pajas para concentrar azúcares. Vinos resultantes en general dulces (algunos secos).</li>
-                <li><strong>Classico</strong>: designa un área histórica dentro de una zona más grande.</li>
-                <li><strong>Frizzante</strong>: espumante suave.</li>
-                <li><strong>Passito</strong>: vino hecho con técnica de appasimento.</li>
-                <li><strong>Recioto</strong>: vino dulce de uvas semisecas (Véneto).</li>
-                <li><strong>Ripasso</strong>: técnica que agrega hollejos de vinos Amarone (Valpolicella), uvas que han sido dejadas secar, terminada la fermentación y antes de ser prensadas. Agrega sabor, alcohol, notas oxidadas y a botritis, y taninos.</li>
-                <li><strong>Superiore</strong>: mayor graduación alcohólica.</li>
-                <li><strong>Vin Santo</strong>: Vino dulce tradicional de la Toscana. Fermentación larga a partir de un mosto muy dulce de uvas deshidratadas.</li>
-            </ul>
-        `;
-        modal.style.display = 'flex';
+        fetch('modal-intro-content-italy.html')
+            .then(response => response.text())
+            .then(data => {
+                const content = new DOMParser().parseFromString(data, 'text/html').querySelector('#modal-intro-content').innerHTML;
+                const modalContent = modal.querySelector('.modal-content');
+                modalContent.innerHTML = content;
+                modalContent.innerHTML += '<span class="close">&times;</span>'; // Agrega el botón de cerrar
+                modal.style.display = 'flex';
+                setupCloseEvent(); // Configura el evento de cierre
+            })
+            .catch(error => console.error('Error al cargar el contenido del modal:', error));
     });
 
-    // Cerrar el modal de "Intro e Información General"
-    document.getElementById('close-intro-info').addEventListener('click', function() {
-        document.getElementById('modal-intro-info').style.display = 'none';
-    });
+    // Configura los eventos de cierre para los botones de cierre
+    function setupCloseEvent() {
+        document.querySelectorAll('.close').forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    }
 
-    // Cerrar el modal de "Intro e Información General" al hacer clic fuera del contenido
-    window.addEventListener('click', function(event) {
-        if (event.target == document.getElementById('modal-intro-info')) {
-            document.getElementById('modal-intro-info').style.display = 'none';
+    // Cerrar todos los modales al hacer clic fuera del contenido
+    window.addEventListener('click', (event) => {
+        if (event.target.classList.contains('modal')) {
+            closeAllModals();
         }
     });
 
-    // Manejo de eventos para cada nombre de región
-    regionNames.forEach(name => {
+     // Manejo de eventos para cada nombre de región
+     regionNames.forEach(name => {
         const regionId = name.getAttribute('data-region');
         const regionElement = document.getElementById(regionId);
 
@@ -95,20 +107,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cerrar todos los modales al hacer clic en el botón de cerrar
-    closeModals.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = button.closest('.modal');
-            if (modal) {
-                modal.style.display = 'none';
-            }
+
+    // Configura los eventos para los nombres de las regiones
+    regionNames.forEach(name => {
+        const regionId = name.getAttribute('data-region');
+        const regionElement = document.getElementById(regionId);
+
+        name.addEventListener('click', () => {
+            closeAllModals();
+            openRegionModal(regionId);
+        });
+
+        regionElement.addEventListener('click', () => {
+            closeAllModals();
+            openRegionModal(regionId);
         });
     });
 
-    // Cerrar todos los modales al hacer clic fuera del contenido
-    window.addEventListener('click', (event) => {
-        if (event.target.classList.contains('modal')) {
-            closeAllModals();
-        }
-    });
+    // Inicializa los eventos de cierre
+    setupCloseEvent();
 });

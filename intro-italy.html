@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇮🇹Italia🇮🇹</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+            // Mostrar el botón de "Volver atrás" solo si se viene desde el modal
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</head>
+<body>
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+    <div class="content">
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h2>Intro e Información General</h2>
+        <p>Variedad más amplia del mundo de estilos de vinos, terruños y variedades de uvas autóctonas.</p>
+        <p>Cuarto país con mayor superficie plantada, primer productor a nivel mundial.</p>
+        <p>Clima difícil de generalizar, hacia el norte más continental y hacia el sur más mediterráneo. Apeninos como factor común en casi todo el territorio. Viticultura de calidad en las laderas.</p>
+        <p>Vinos más admirados provienen de suelos calcáreos (Piemonte, Toscana). También hay predominancia de suelos volcánicos (Soave).</p>
+        <h3>DOC vs DOCG</h3>
+        <p>DOCG regulación más estricta. Más restrictiva en términos de variedades (suelen ser varietales o blends específicos). Tiene que haber sido DOC por 5 años.</p>
+        <p>DOCG: bandita rosa. 🎀</p>
+        <p>DOC: bandita verde. 🟢</p>
+        <h3>Glosario</h3>
+        <ul>
+            <li><strong>Appasimento</strong>: proceso en el cual se secan las uvas sobre pajas para concentrar azúcares. Vinos resultantes en general dulces (algunos secos).</li>
+            <li><strong>Classico</strong>: designa un área histórica dentro de una zona más grande.</li>
+            <li><strong>Frizzante</strong>: espumante suave.</li>
+            <li><strong>Passito</strong>: vino hecho con técnica de appasimento.</li>
+            <li><strong>Recioto</strong>: vino dulce de uvas semisecas (Véneto).</li>
+            <li><strong>Ripasso</strong>: técnica que agrega hollejos de vinos Amarone (Valpolicella), uvas que han sido dejadas secar, terminada la fermentación y antes de ser prensadas. Agrega sabor, alcohol, notas oxidadas y a botritis, y taninos.</li>
+            <li><strong>Superiore</strong>: mayor graduación alcohólica.</li>
+            <li><strong>Vin Santo</strong>: Vino dulce tradicional de la Toscana. Fermentación larga a partir de un mosto muy dulce de uvas deshidratadas.</li>
+        </ul>
+        <!-- Aquí puedes agregar más contenido para la página completa -->
+    </div>
+    <button onclick="window.location.href='map-italy.html'" class="view-map-button">Ver mapa y regiones</button>
+</body>
+</html>

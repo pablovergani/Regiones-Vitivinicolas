@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lombardía</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Lombardía</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región famosa por sus vinos tanto tintos como blancos, con una gran diversidad de estilos.</p>
+        <p>Estilos destacados: <strong>Franciacorta</strong>, <strong>Oltrepò Pavese</strong>.</p>
+        <p>La región cuenta con <strong>microclimas</strong> que afectan el perfil de los vinos.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Chardonnay, Pinot Bianco.</p>
+        <p>🟣 <strong>Tintas</strong>: Nebbiolo, Barbera.</p>
+
+        <h2>Clima</h2>
+        <p>El clima varía desde <strong>continental</strong> en el interior hasta <strong>más moderado</strong> cerca de los lagos.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOCG Franciacorta</strong>: Espumoso de alta calidad, principalmente de Chardonnay y Pinot Nero.</li>
+            <li><strong>DOC Oltrepò Pavese</strong>: Vino espumoso y tranquillo de diferentes variedades.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mostrar el botón de "Volver atrás" solo si se viene desde el modal
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilia-Romagna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Emilia-Romagna</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región conocida por sus vinos elegantes y su rica tradición gastronómica.</p>
+        <p>Estilos famosos: <strong>Lambrusco</strong>🍷, <strong>Albana</strong>🥂.</p>
+        <p>Excelente oferta de vinos espumosos y tranquilos.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Albana, Trebbiano.</p>
+        <p>🟣 <strong>Tintas</strong>: Lambrusco, Sangiovese.</p>
+
+        <h2>Clima</h2>
+        <p>Continental con influencias <strong>marítimas</strong> en la costa.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOC Lambrusco</strong>: espumoso tinto con burbujas vivas.</li>
+            <li><strong>DOCG Albana di Romagna</strong>: blanco seco o dulce con cuerpo.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

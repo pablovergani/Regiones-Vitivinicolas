@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veneto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Veneto</h1>
+        <h2>Lo más relevante</h2>
+        <p>Es la región de mayor producción de toda Italia. El 75% son vinos blancos.</p>
+        <p>Estilos famosos: <strong>Prosecco</strong>🍾, <strong>Valpolicella</strong>🍷, <strong>Soave</strong>🥂.</p>
+        <p>No todos los vinos DOC son de calidad.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Garganega, Trebbiano, Glera (Prosecco).</p>
+        <p>🟣 <strong>Tintas</strong>: Corvina, Rondinella, Molinara, bordelesas.</p>
+
+        <h2>Clima</h2>
+        <p>Se va tornando más <strong>mediterráneo</strong> hacia el Adriático.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOC Soave</strong>: blanco 70% Garganega + Trebbiano di Soave y/o Chardonnay + otras. Está también <strong>DOC Soave Classico</strong> y <strong>DOC Soave Superiore</strong>.</li>
+            <li><strong>DOC Recioto di Soave</strong>: dulce de uvas semipasificadas.</li>
+            <li><strong>DOC Valpolicella</strong>: tinto seco de Corvina + Rondinella + Molinara. Subzonas: Classico y Valpantena.</li>
+            <li><strong>DOC Recioto Della Valpolicella</strong>: tinto dulce o semi-dulce, mismas cepas que Valpolicella.</li>
+            <li><strong>DOC Recioto Della Valpolicella Spumante</strong>: espumante tinto dulce.</li>
+            <li><strong>DOC Amarrone Della Valpolicella</strong>: mismas uvas que Valpolicella parcialmente deshidratadas. Más cuerpo y alcohol, algo de azúcar residual.</li>
+            <li><strong>DOC Valpolicella Ripasso</strong>: refermentan el vino con hollejos que quedaron del Amarrone. Mayormente de Corvina.</li>
+            <li><strong>DOC Prosecco</strong>: Espumante de Glera. Método Charmat y azúcar residual.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mostrar el botón de "Volver atrás" solo si se viene desde el modal
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

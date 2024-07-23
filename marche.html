@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marche</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Marche</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región conocida por sus vinos blancos frescos y tintos elegantes.</p>
+        <p>Estilos destacados: <strong>Verdicchio</strong>, <strong>Rosso Conero</strong>.</p>
+        <p>El <strong>terroir</strong> costero y montañoso enriquece los vinos de Marche.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Verdicchio, Pecorino.</p>
+        <p>🟣 <strong>Tintas</strong>: Sangiovese, Montepulciano.</p>
+
+        <h2>Clima</h2>
+        <p>El clima es <strong>costero</strong> y <strong>montañoso</strong>, con influencia moderada del Adriático.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOC Verdicchio dei Castelli di Jesi</strong>: Vino blanco fresco y afrutado.</li>
+            <li><strong>DOC Rosso Conero</strong>: Tinto robusto y estructurado, basado en Montepulciano.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mostrar el botón de "Volver atrás" solo si se viene desde el modal
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

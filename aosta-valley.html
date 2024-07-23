@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valle D'Aosta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Valle D'Aosta</h1>
+        <h2>Lo más relevante</h2>
+        <p>La región más pequeña de Italia, conocida por sus vinos únicos y su clima alpino.</p>
+        <p>Estilos distintivos: <strong>Fumin</strong>, <strong>Petit Rouge</strong>.</p>
+        <p>El <strong>terroir</strong> alpino contribuye a su perfil distintivo.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Pinot Grigio.</p>
+        <p>🟣 <strong>Tintas</strong>: Fumin, Petit Rouge.</p>
+
+        <h2>Clima</h2>
+        <p>Clima <strong>alpino</strong> con influencias frescas y montañosas.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOC Vallée d'Aoste</strong>: Incluye tanto vinos blancos como tintos, destacando la influencia del clima alpino.</li>
+            <li><strong>DOC Torrette</strong>: Vino tinto principalmente de Petit Rouge.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mostrar el botón de "Volver atrás" solo si se viene desde el modal
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

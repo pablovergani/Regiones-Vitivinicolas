@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerdeña</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Cerdeña</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región con vinos únicos influenciados por su aislamiento y clima mediterráneo.</p>
+        <p>Estilos famosos: <strong>Vermentino</strong>🥂, <strong>Canonau</strong>🍷.</p>
+        <p>Vinos distintivos y de alta calidad.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Vermentino, Nuragus.</p>
+        <p>🟣 <strong>Tintas</strong>: Cannonau, Monica.</p>
+
+        <h2>Clima</h2>
+        <p><strong>Mediterráneo</strong>, con <strong>veranos calurosos</strong> e <strong>invierno suave</strong>.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOC Cannonau di Sardegna</strong>: tinto con cuerpo y notas especiadas.</li>
+            <li><strong>DOC Vermentino di Sardegna</strong>: blanco fresco y afrutado.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

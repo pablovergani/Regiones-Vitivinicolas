@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umbría</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Umbría</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región famosa por sus vinos de alta calidad y su tradición vinícola.</p>
+        <p>Estilos destacados: <strong>Sagrantino</strong>, <strong>Trebbiano</strong>.</p>
+        <p>El <strong>terroir</strong> en Umbría produce vinos con gran carácter.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Trebbiano.</p>
+        <p>🟣 <strong>Tintas</strong>: Sagrantino, Sangiovese.</p>
+
+        <h2>Clima</h2>
+        <p>Contempla un clima <strong>continental</strong> con veranos cálidos e inviernos fríos.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOCG Sagrantino di Montefalco</strong>: Vino tinto robusto y con gran potencial de envejecimiento.</li>
+            <li><strong>DOC Orvieto</strong>: Blanco de alta calidad, principalmente de Trebbiano.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mostrar el botón de "Volver atrás" solo si se viene desde el modal
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

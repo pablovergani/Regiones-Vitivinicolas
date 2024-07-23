@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friuli-Venezia Giulia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Friuli-Venezia Giulia</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región con una gran variedad de vinos blancos frescos y aromáticos.</p>
+        <p>Estilos famosos: <strong>Friulano</strong>🥂, <strong>Sauvignon Blanc</strong>🍷.</p>
+        <p>Vinos que destacan por su calidad y complejidad.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Friulano, Sauvignon Blanc.</p>
+        <p>🟣 <strong>Tintas</strong>: Merlot, Pinot Noir.</p>
+
+        <h2>Clima</h2>
+        <p><strong>Continental</strong> con influencia <strong>adriática</strong>.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOC Friuli Colli Orientali</strong>: blanco de Friulano y tintos variados.</li>
+            <li><strong>DOC Collio</strong>: vinos blancos de gran elegancia y frescura.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

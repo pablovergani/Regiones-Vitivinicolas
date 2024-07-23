@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basilicata</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Botón para volver atrás -->
+    <button id="back-button" style="display: none;" onclick="window.location.href='map-italy.html'">⬅️ Volver al mapa</button>
+
+    <!-- Contenido de la página completa -->
+    <div id="full-content">
+        <h1>Basilicata</h1>
+        <h2>Lo más relevante</h2>
+        <p>Región conocida por su producción de vinos de alta calidad en un entorno montañoso.</p>
+        <p>Estilos famosos: <strong>Aglianico del Vulture</strong>🍷, <strong>Fiano</strong>🥂.</p>
+        <p>Excelentes vinos DOC y vinos con envejecimiento prolongado.</p>
+
+        <h2>Variedades</h2>
+        <p>🟡 <strong>Blancas</strong>: Fiano, Greco.</p>
+        <p>🟣 <strong>Tintas</strong>: Aglianico, Sangiovese.</p>
+
+        <h2>Clima</h2>
+        <p>Continental y montañoso, con <strong>veranos calurosos</strong> e <strong>invierno frío</strong>.</p>
+
+        <h2>Denominaciones</h2>
+        <ul>
+            <li><strong>DOC Aglianico del Vulture</strong>: tinto robusto y complejo.</li>
+            <li><strong>DOC Basilicata</strong>: variedad de estilos dependiendo de la subzona.</li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.referrer.includes('map-italy.html')) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
